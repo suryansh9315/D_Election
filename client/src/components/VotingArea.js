@@ -6,7 +6,6 @@ import Election from "../abi/Election.json";
 import data from "../data"
 
 const Container = styled.div`
-  /* border: 2px solid black; */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -58,7 +57,6 @@ const Title = styled.div`
 `;
 const Discription = styled.div`
   width: 600px;
-  /* height: 350px; */
   text-align: justify;
 `;
 const InputBox = styled.div`
@@ -78,8 +76,6 @@ const Input = styled.input`
 `;
 const DataList = styled.datalist``;
 const Option = styled.option`
-  /* background: #39736d; */
-  /* color: #232424; */
 `;
 const Button = styled.button`
   padding: 13px 60px;
@@ -116,7 +112,6 @@ export default function CastVote(props) {
 
   async function vote() {
     console.log(props.account)
-    // console.log(CheckAddress())
     if(CheckAddress()==100){
       console.log("Voted2");
       return
@@ -127,8 +122,6 @@ export default function CastVote(props) {
       Election.abi,
       props.signer
     );
-    // console.log(props.signer);
-    // console.log(props.account)
     console.log(input);
     if (!input) {
       alert("Enter Correct Candidate Name");
@@ -147,8 +140,6 @@ export default function CastVote(props) {
           body: JSON.stringify({"index":index})
         })
         const data = await response.json()
-        // data[index].voted = true
-        // console.log(data[index].voted)
         return;
       }
     }

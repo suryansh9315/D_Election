@@ -44,9 +44,6 @@ let voters = [
         "voted":false
     },
 ]
-// app.get('/',(req,res)=>{
-//     res.json({"message":"Nice"})
-// })
 app.post("/updatefile",(req,res,next)=>{
     console.log(req.body.index)
     res.set('Access-Control-Allow-Origin','http://localhost:3000')
