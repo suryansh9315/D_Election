@@ -28,6 +28,8 @@ contract Election{
     }
 
     function vote(uint index) public {
+        require(index<CandidatesCount, "Cannot vote to non-existent candidate");
+        require(index>0, "Negative indexed");
         candidates[index].VoteCount +=1;
     }
 }
